@@ -1,40 +1,19 @@
-// document.body.addEventListener("click", () => {
-//   alert("this is the body");
-// });
-// document.querySelector("section").addEventListener("click", () => {
-//   alert("this is the section");
-// });
-// document.querySelector("div").addEventListener("click", () => {
-//   alert("this is the div");
-// });
-// document.addEventListener("keydown", (event) => {
-//   event.preventDefault();
-//   console.log(event.key);
-//   console.log(event.code);
-//   if (event.key == "Enter") {
-//     alert("hello world!");
-//   }
-// });
-
-// let time1 = 0.0,
-//   time2 = 0.0;
-// document.body.addEventListener("click", (event) => {
-//   console.log(event);
-//   document.body.style.backgroundColor = "black";
-//   time1 = event.timeStamp;
-//   console.log(time1);
-//   console.log(event.currentTarget);
-// });
-// document.body.addEventListener("click", (event) => {
-//   setTimeout(() => {
-//     alert("hello world!");
-//     time2 = event.timeStamp;
-//     console.log(time2);
-//     console.log(time1 - time2);
-//   }, 3000);
-// });
-
-console.log(document.forms);
-document.forms[0].onsubmit = (event) => {
-  event.preventDefault();
-};
+window.addEventListener("load", () => {
+  let id = 0;
+  let text = "";
+  let alert = document.querySelector(".alert");
+  let close = alert.firstChild;
+  let input = document.querySelector("#task");
+  close.addEventListener("click", () => {
+    alert.classList.add("dismissible");
+  });
+  input.addEventListener("focus", () => {
+    document.addEventListener("keydown", (event) => {
+      event.preventDefault();
+      console.log(event.code);
+      if (event.code == "enter" || event.code == "numpadEnter") {
+        event.preventDefault();
+      }
+    });
+  });
+});
