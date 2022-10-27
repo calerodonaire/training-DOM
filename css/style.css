@@ -34,7 +34,7 @@ body {
   width: 50vw;
   height: 50vh;
 }
-section {
+/* section {
 
   background-color: var(--black);
   width: 50vw;
@@ -44,9 +44,27 @@ div{
   background-color: var(--yellow);
   width: 25vw;
   height: 25vh;
-}
+} */
 .flex-center{
   display: flex;
   justify-content: center;
   align-items: center;
+}
+form,input,button{
+  width: 60%;
+  background-color: var(--blue);
+  padding: 1em;
+  margin: 1em auto;
+  border-radius: .3rem;
+}
+input,button{
+  width: 100%;
+}
+button{
+  background-color: var(--dark);
+color: white;
+}
+input{
+  background-color: white;
+  color: var(--dark);
 }
